@@ -1,43 +1,4 @@
-//! Implementation of the [DBC (DataBaseClient) file format for World of Warcraft 1.12](https://wowdev.wiki/DBC).
-//! This is auto generated from `.xml` files [in the github repository](https://github.com/gtker/wow_vanilla_dbc/tree/main/rxml/xml).
-//!
-//! DBC files are inside [the MPQ files](https://wowdev.wiki/MPQ) that are included with the client.
-//! This library does not deal with MPQ files.
-//! You will have to extract the DBC files from the MPQ using another tool.
-//!
-//! # Usage
-//!
-//! The [`tables`] module contains submodules with table definitions.
-//! Each table always has two types (using [`tables::item_class`] as an example):
-//!
-//! 1. The table: [`ItemClass`](`tables::item_class::ItemClass`). Which implements [`DbcTable`].
-//! 2. The table row: [`ItemClassRow`](`tables::item_class::ItemClassRow`). Which is accessed through [`DbcTable::rows`].
-//!
-//! Tables that have a primary key additionally have a type suffixed with `Key` ([`ItemClassKey`](`tables::item_class::ItemClassKey`)),
-//! and the table ([`ItemClass`](`tables::item_class::ItemClass`)) implements the [`Indexable`] trait.
-//!
-//! [`Gender`] and [`SizeClass`] are in the crate root because they are used in multiple tables and have been de-duplicated in order to reduce the amount of types in the crate.
-//!
-//! # Installation
-//!
-//! To add only the synchronous methods add the following to your `Cargo.toml`:
-//!
-//! ```toml
-//! [dependencies]
-//! wow_vanilla_dbc = { version = "0.1" }
-//! ```
-//!
-//! Or add it with [cargo edit](https://github.com/killercup/cargo-edit):
-//! ```bash
-//! cargo add wow_vanilla_dbc
-//! ```
-//!
-//! # Tests
-//!
-//! Published builds do not have any tests for individual tables,
-//! but these can be built by changing `BUILD_TESTS` in `rxml/src/main.rs` of the repository.
-//! These require the original DBC files from the client which can not be republished.
-//!
+//! DEPRECATED. USE [wow_dbc](https://github.com/gtker/wow_vanilla_dbc) INSTEAD.
 
 #![forbid(unsafe_code)]
 // This requires fields knowing about the sizes of enums
